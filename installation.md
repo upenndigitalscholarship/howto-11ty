@@ -3,7 +3,16 @@ layout: default
 ---
 
 ### Install Node.js
-https://www.digitalocean.com/community/tutorial_collections/how-to-install-node-js
+Your browser contains an enviornment that can execute JavaScript. To do the same thing outside of your browser, we need to install a JavaScript runtime called Node.js. This will allow you to write and execute JavaScript in the terminal.   
+
+Mac:
+https://nodejs.org/en/download/
+Windows:
+https://nodejs.org/en/download/
+
+Linux:
+`sudo apt install nodejs`
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 
 ### A quick tour around your new Node neighborhood
 
@@ -12,7 +21,10 @@ npx
 nvm
 
 package.json
-package-lock.json
+
+## To get started, create a folder for your project
+`mkdir my-project`
+`cd my-project` 
 
 ## Initialize node in your project directory
 `npm init -y`
