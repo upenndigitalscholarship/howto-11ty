@@ -66,9 +66,10 @@ Now becomes
     </body>
 </html>
 ```
+> 11ty will also process frontmatter in json or javascript is that's your preference: https://www.11ty.dev/docs/data-frontmatter/#alternative-front-matter-formats
 
 ## Collections and tags
-We often have many pages of the same type. For example, our site might have a recipes section with many recipe pages.  Eleventy would call this a `collection`.  The simplest way to identify everything as a recipe is to add a json file in the recipes folder. This will automatically add the `recipe` tag to every file in the folder and subfolders. If you prefer, tags can also be added in frontmatter. 
+We often have many pages of the same type. For example, our site might have a recipes section with many recipe pages.  Eleventy would call this a `collection`.  The simplest way to identify everything as a recipe is to add a json file in the recipes folder. This will automatically add the `recipe` tag to every file in the folder and subfolders. If you prefer, tags can also be added in frontmatter `tag: ['recipe','yummy']`. 
 
 **mysite/recipes/recipes.json**
 ```json
@@ -79,12 +80,9 @@ We often have many pages of the same type. For example, our site might have a re
 }
 ```
 
-Now that our recipe files have the `recipes` tag, we can access them as a collection. 
-
 ```
 -- recipes 
     recipes.json
-    recipes.md
     - cakes
         - chocolate.md
         - black-forest.md
@@ -92,21 +90,24 @@ Now that our recipe files have the `recipes` tag, we can access them as a collec
         - tortellini.md
 ```
 
-**_includes/recipes.njk**
+Now that our recipe files have the `recipes` tag, we can access them as a collection. 
+
 ```html
 <ul>
-{%- for recipe in collections.recipes -%}
+{% for recipe in collections.recipes %}
   <li><a href="{{ recipe.url }}">{{ recipe.data.title }}</a>
-{%- endfor -%}
+{% endfor %}
 </ul>
 ```
+
+Pagination of collections 
+`{% if pagination.href.previous %} Previous Page {% endif %} {% if pagination.href.next %} Next Page {% endif %}`
+
 https://www.11ty.dev/docs/collections/#collection-item-data-structure
 
-.eleventy.js
-# pass filters and data to templates
-eleventyConfig.addPassthroughCopy("assets");
+## Data 
 
-.eleventyignore
+`_data`
 
-tags
-json file for tags in a directory
+
+https://github.com/jlengstorf/11ty-examples/tree/master/09-third-party-data
