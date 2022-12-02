@@ -23,12 +23,12 @@ With Node installed, you'll get several new commands in your terminal.
 - `node ls` will list the versions of Node installed on your machine.
 
 #### npm 
-npm (Node Package Manager) is the default package manager for the JavaScript runtime environment Node.js.  
+npm (Node Package Manager) is the default package manager for Node.js. Packages are bundles of code that serve a specific need and are shared on the [npm hub](https://www.npmjs.com/). Most packages also have a GitHub repository, but npm provides a quick way to install packages and manage dependencies.  
 - When initialized in a directory (`npm init`), npm will create a package.json file that keeps tracks of all the packages and the version needed for the project. 
-- To install a package, type `npm i @11ty/eleventy`. It is often helpful to find your package first at [npmjs.com/](https://www.npmjs.com/) where you'll find links to documentation and current versions. Once installed, you'll see your packaged listed in package-lock.json. The code for your package is stored in its own subdirectory `node_modules`.  It's a good practice to add node_modules to your .gitignore file. 
+- To install a package, type `npm install` or `npm i`. For example, `npm i @11ty/eleventy` installs 11ty. It is often helpful to find your package first at [npmjs.com/](https://www.npmjs.com/) where you'll find links to documentation and current versions. Once installed, you'll see your packaged listed in package-lock.json. The code for your package is stored in its own subdirectory in `node_modules`.  It's a good practice to add node_modules to your .gitignore file to save space. 
 
 #### npx
-npx (Node Package Execute) is included with npm. The `npx` command lets you run code in an environment with all the packages installed. For example: `npx eleventy`.
+npx (Node Package Execute) is included with npm. The `npx` command lets you run code in your project's environment with all the packages installed. For example: `npx eleventy`.
 
 
 ## To get started with 11ty, create a folder for your project
@@ -49,6 +49,7 @@ or if you just want whatever the current version is:
 
 `npm install @11ty/eleventy`
 
+You will now see a package-lock.json file in your project directory.  This file lists all the packages needed for your project and their versions.
 
 ### How to run 11ty
 
