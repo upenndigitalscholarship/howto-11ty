@@ -1,0 +1,23 @@
+{
+  "name": "howto-11ty",
+  "version": "1.0.0",
+  "description": "This is an informal space to share ideas, experience and links related to 11ty",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upenndigitalscholarship/howto-11ty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/upenndigitalscholarship/howto-11ty/issues"
+  },
+  "homepage": "https://github.com/upenndigitalscholarship/howto-11ty#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.18"
+  }
+}
