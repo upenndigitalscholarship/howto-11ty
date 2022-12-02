@@ -30,7 +30,6 @@ Here's an example of a very simple template using the [Nunjucks](https://mozilla
 <html>
     <head>
         <title>{{ title }}</title>
-        <meta charset="utf-8">
     </head>
 
     <body>
@@ -60,7 +59,6 @@ Now becomes
 <html>
     <head>
         <title>my page</title>
-        <meta charset="utf-8">
     </head>
 
     <body>
@@ -69,7 +67,43 @@ Now becomes
 </html>
 ```
 
+## Collections and tags
+We often have many pages of the same type. For example, our site might have a recipes section with many recipe pages.  Eleventy would call this a `collection`.  The simplest way to identify everything as a recipe is to add a json file in the recipes folder. This will automatically add the `recipe` tag to every file in the folder and subfolders. If you prefer, tags can also be added in frontmatter. 
 
+**mysite/recipes/recipes.json**
+```json
+{
+    "tags": [
+      "recipes"
+    ]
+}
+```
+
+Now that our recipe files have the `recipes` tag, we can access them as a collection. 
+
+```
+-- recipes 
+    recipes.json
+    recipes.md
+    - cakes
+        - chocolate.md
+        - black-forest.md
+    - pasta
+        - tortellini.md
+```
+
+**_includes/recipes.njk**
+```html
+<ul>
+{%- for recipe in collections.recipes -%}
+  <li><a href="{{ recipe.url }}">{{ recipe.data.title }}</a>
+{%- endfor -%}
+</ul>
+```
+https://www.11ty.dev/docs/collections/#collection-item-data-structure
+
+.eleventy.js
+# pass filters and data to templates
 eleventyConfig.addPassthroughCopy("assets");
 
 .eleventyignore
