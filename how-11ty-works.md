@@ -1,5 +1,6 @@
 ---
 layout: default
+templateEngineOverride: md
 ---
 
 11ty uses the directory structure of your project folder to build a site. Any markdown or HTML files will be converted into a page. Anything nested in a folder will be nested in the site.  So `/pages/2022/about.md` will become `/pages/2022/about` on the site. 
@@ -25,7 +26,7 @@ One of the main advantages of site generators is their ability to separate conte
 Here's an example of a very simple template using the [Nunjucks](https://mozilla.github.io/nunjucks/) templating language.  11ty also supports [liquid](https://liquidjs.com/tutorials/intro-to-liquid.html) and [Handlebars](https://handlebarsjs.com/)
 
 **default.njk**
-```html
+```markdown
 <!DOCTYPE html>
 <html>
     <head>
