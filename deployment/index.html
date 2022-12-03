@@ -13,6 +13,13 @@
       <div class="card">
        <h2>GitHub Pages</h2>
 <p>https://www.rockyourcode.com/how-to-deploy-eleventy-to-github-pages-with-github-actions/</p>
+<p>Note that you'll need to adjust your urls when using Pages. Pages adds the repository name after github.io, creating <code>upenndigitalscholarship.github.io/howto-11ty/</code> rather than <code>localhost:8080/</code> when developing locally.</p>
+<pre><code class="language-js">module.exports = function(eleventyConfig) {
+  return {
+    pathPrefix: &quot;/howto-11ty/&quot;
+  }
+};
+</code></pre>
 <h2>Netlify</h2>
 
       </div>
