@@ -1,5 +1,7 @@
 ---
+title: 2 How 11ty Works
 layout: default
+tags: pages
 templateEngineOverride: md
 ---
 

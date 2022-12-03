@@ -1,5 +1,7 @@
 ---
+title: 1 Installation
 layout: default
+tags: pages
 ---
 
 ### Install Node.js

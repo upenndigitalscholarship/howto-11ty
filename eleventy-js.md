@@ -1,3 +1,9 @@
+---
+title: 3 .eleventy.js
+layout: default
+tags: pages
+---
+
 ## Advanced Configuration
 The main configuration file for an 11ty project is `.eleventy.js`
 
