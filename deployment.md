@@ -11,5 +11,8 @@ Note that you'll need to adjust your urls when using Pages. GH Pages adds the re
 You can add a prefix in the build command of your GitHub action: 
 `npx @11ty/eleventy --pathprefix=howto-11ty`
 
+You will also need to use this syntax for urls
+`href="{{ '/assets/css/style.css' | url }}"` rather than `href="/assets/css/style.css"`
+
 ## Netlify
 
