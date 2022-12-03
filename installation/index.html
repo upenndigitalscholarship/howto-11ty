@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+
+<body>
+    
+    <h3>Install Node.js</h3>
+<p>Your browser contains an environment that can execute JavaScript. To do the same thing outside your browser, we need to install a JavaScript runtime called Node.js, allowing you to write and run JavaScript in the terminal.</p>
+<ol>
+<li>
+<p>Mac</p>
+<ul>
+<li>The simplest way to install Node on Mac is with the package available on the Nodejs site. Download the file and install it: https://nodejs.org/en/download/</li>
+<li>It is also possible to install Node with Homebrew. https://formulae.brew.sh/formula/node. <code>brew install node@18</code></li>
+</ul>
+</li>
+<li>
+<p>Windows</p>
+<ul>
+<li>The simplest way to install Node on Windows is with the package available on the Nodejs site. Download the file and install it: https://nodejs.org/en/download/</li>
+</ul>
+</li>
+<li>
+<p>Linux:</p>
+<ul>
+<li><code>sudo apt install nodejs</code></li>
+<li>https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04</li>
+</ul>
+</li>
+</ol>
+<h3>A quick tour around your new Node neighborhood</h3>
+<p>With Node installed, you'll get several new commands in your terminal.</p>
+<ul>
+<li><code>node</code> will open a Node shell that works much like the console in your browser. You can execute .js files with <code>node myfile.js</code></li>
+<li><code>node ls</code> will list the versions of Node installed on your machine.</li>
+</ul>
+<h4>npm</h4>
+<p>npm (Node Package Manager) is the default package manager for Node.js. Packages are bundles of code that serve a specific need and are shared on the <a href="https://www.npmjs.com/">npm hub</a>. Most packages also have a GitHub repository, but npm provides a quick way to install packages and manage dependencies.</p>
+<ul>
+<li>When initialized in a directory (<code>npm init</code>), npm will create a package.json file that keeps tracks of all the packages and the version needed for the project.</li>
+<li>To install a package, type <code>npm install</code> or <code>npm i</code>. For example, <code>npm i @11ty/eleventy</code> installs 11ty. It is often helpful to find your package first at <a href="https://www.npmjs.com/">npmjs.com/</a> where you'll find links to documentation and current versions. Once installed, you'll see your packaged listed in package-lock.json. The code for your package is stored in its own subdirectory in <code>node_modules</code>.  It's a good practice to add node_modules to your .gitignore file to save space.</li>
+</ul>
+<h4>npx</h4>
+<p>npx (Node Package Execute) is included with npm. The <code>npx</code> command lets you run code in your project's environment with all the packages installed. For example: <code>npx eleventy</code>.</p>
+<h2>To get started with 11ty, create a folder for your project</h2>
+<p><code>mkdir my-project</code>
+<code>cd my-project</code></p>
+<h2>Initialize node in your project directory</h2>
+<p><code>npm init -y</code></p>
+<h2>Install the version of Eleventy that you want.</h2>
+<p>https://www.npmjs.com/package/@11ty/eleventy?activeTab=versions</p>
+<p>For example, the internationalization is currently only included in eleventy 2.0.  If you want that, you can install:</p>
+<p><code>npm i @11ty/eleventy@2.0.0-canary.18</code></p>
+<p>or if you just want whatever the current version is:</p>
+<p><code>npm install @11ty/eleventy</code></p>
+<p>You will now see a package-lock.json file in your project directory.  This file lists all the packages needed for your project and their versions.</p>
+<h3>How to run 11ty</h3>
+<p><code>npx eleventy</code> -- build the site
+<code>npx eleventy --serve</code> --run local dev in browser</p>
+
+
+</body>
+</html>

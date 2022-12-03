@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+
+<body>
+    
+    <p>11ty uses the directory structure of your project folder to build a site. Any markdown or HTML files will be converted into a page. Anything nested in a folder will be nested in the site.  So <code>/pages/2022/about.md</code> will become <code>/pages/2022/about</code> on the site.</p>
+<p>As an example, you can create an index.md file in your project's root directory. When you run <code>npx eleventy</code>, 11ty will create a <code>_site</code> directory and add an index.html file in that folder with content from your index.md file.</p>
+<p><strong>index.md</strong></p>
+<pre><code class="language-markdown"># I am markdown
+</code></pre>
+<p>becomes</p>
+<p><strong>index.html</strong></p>
+<pre><code class="language-html">&lt;h1&gt;I am markdown&lt;/h1&gt;
+</code></pre>
+<p>If there are files that you don't want 11ty to process, you can add them to an <code>.eleventyignore</code> file.</p>
+<h2>Templates</h2>
+<p>One of the main advantages of site generators is their ability to separate content from layout. With templates, we have reusable and consistent formatting and layout for a site's content. 11ty will look for your templates in an <code>_includes</code> directory.</p>
+<p>Here's an example of a very simple template using the <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> templating language.  11ty also supports <a href="https://liquidjs.com/tutorials/intro-to-liquid.html">liquid</a> and <a href="https://handlebarsjs.com/">Handlebars</a></p>
+<p><strong>default.njk</strong></p>
+<pre><code class="language-markdown">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;{{ title }}&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        {{ content | safe }}
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>Frontmatter</h2>
+<p>Frontmatter is a section in a markdown file in yaml format for data and metadata. We can use it to save the author of a text or tags for keywords. To tell 11ty that we want our file index.md to use the default.njk template, we'll need to add frontmatter. The <code>title</code> key gives us a value to insert in the template's placeholder <code>{{ title }}</code>. The <code>layout</code> key tells 11ty to look for a template in <code>_includes</code> named default and to use it when rendering the page. Note that the text beneath the frontmatter is placed where we have <code>{{ content | safe }}</code></p>
+<p><strong>index.md</strong></p>
+<pre><code class="language-markdown">---
+title: my page
+layout: default
+---
+
+# I am markdown
+</code></pre>
+<p>Now becomes</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;my page&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;h1&gt;I am markdown&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>11ty will also process frontmatter in json or javascript is that's your preference: https://www.11ty.dev/docs/data-frontmatter/#alternative-front-matter-formats</p>
+</blockquote>
+<h2>Collections and tags</h2>
+<p>We often have many pages of the same type. For example, our site might have a recipes section with many recipe pages.  Eleventy would call this a <code>collection</code>.  The simplest way to identify everything as a recipe is to add a json file in the recipes folder. This will automatically add the <code>recipe</code> tag to every file in the folder and subfolders. If you prefer, tags can also be added in frontmatter <code>tag: ['recipe','yummy']</code>.</p>
+<p><strong>mysite/recipes/recipes.json</strong></p>
+<pre><code class="language-json">{
+    &quot;tags&quot;: [
+      &quot;recipes&quot;
+    ]
+}
+</code></pre>
+<pre><code>-- recipes 
+    recipes.json
+    - cakes
+        - chocolate.md
+        - black-forest.md
+    - pasta
+        - tortellini.md
+</code></pre>
+<p>Now that our recipe files have the <code>recipes</code> tag, we can access them as a collection.</p>
+<pre><code class="language-html">&lt;ul&gt;
+{% for recipe in collections.recipes %}
+  &lt;li&gt;&lt;a href=&quot;{{ recipe.url }}&quot;&gt;{{ recipe.data.title }}&lt;/a&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></pre>
+<p>Pagination of collections
+<code>{% if pagination.href.previous %} Previous Page {% endif %} {% if pagination.href.next %} Next Page {% endif %}</code></p>
+<p>https://www.11ty.dev/docs/collections/#collection-item-data-structure</p>
+<h2>Data</h2>
+<p><code>_data</code></p>
+<p>https://github.com/jlengstorf/11ty-examples/tree/master/09-third-party-data</p>
+
+
+</body>
+</html>
