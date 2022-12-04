@@ -10,6 +10,7 @@
 
 <body>
     <div class="container">
+    
       <div class="card">
        <h3>Install Node.js</h3>
 <p>Your browser contains an environment that can execute JavaScript. To do the same thing outside your browser, we need to install a JavaScript runtime called Node.js, allowing you to write and run JavaScript in the terminal.</p>
@@ -46,6 +47,7 @@
 <ul>
 <li>When initialized in a directory (<code>npm init</code>), npm will create a package.json file that keeps tracks of all the packages and the version needed for the project.</li>
 <li>To install a package, type <code>npm install</code> or <code>npm i</code>. For example, <code>npm i @11ty/eleventy</code> installs 11ty. It is often helpful to find your package first at <a href="https://www.npmjs.com/">npmjs.com/</a> where you'll find links to documentation and current versions. Once installed, you'll see your packaged listed in package-lock.json. The code for your package is stored in its own subdirectory in <code>node_modules</code>.  It's a good practice to add node_modules to your .gitignore file to save space.</li>
+<li>To remove a package you can use <code>npm uninstall &lt;package name&gt;</code></li>
 </ul>
 <h4>npx</h4>
 <p>npx (Node Package Execute) is included with npm. The <code>npx</code> command lets you run code in your project's environment with all the packages installed. For example: <code>npx eleventy</code>.</p>
@@ -62,13 +64,12 @@
 <p><code>npm install @11ty/eleventy</code></p>
 <p>You will now see a package-lock.json file in your project directory.  This file lists all the packages needed for your project and their versions.</p>
 <h3>How to run 11ty</h3>
-<p><code>npx eleventy</code> -- build the site
+<p><code>npx eleventy</code> -- build the site<br>
 <code>npx eleventy --serve</code> --run local dev in browser</p>
 
       </div>
     </div>
-
-   
-
+    
 </body>
+
 </html>
