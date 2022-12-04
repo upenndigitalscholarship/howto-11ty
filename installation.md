@@ -28,33 +28,34 @@ With Node installed, you'll get several new commands in your terminal.
 npm (Node Package Manager) is the default package manager for Node.js. Packages are bundles of code that serve a specific need and are shared on the [npm hub](https://www.npmjs.com/). Most packages also have a GitHub repository, but npm provides a quick way to install packages and manage dependencies.  
 - When initialized in a directory (`npm init`), npm will create a package.json file that keeps tracks of all the packages and the version needed for the project. 
 - To install a package, type `npm install` or `npm i`. For example, `npm i @11ty/eleventy` installs 11ty. It is often helpful to find your package first at [npmjs.com/](https://www.npmjs.com/) where you'll find links to documentation and current versions. Once installed, you'll see your packaged listed in package-lock.json. The code for your package is stored in its own subdirectory in `node_modules`.  It's a good practice to add node_modules to your .gitignore file to save space. 
+- To remove a package you can use `npm uninstall <package name>`
 
 #### npx
 npx (Node Package Execute) is included with npm. The `npx` command lets you run code in your project's environment with all the packages installed. For example: `npx eleventy`.
 
 
-## To get started with 11ty, create a folder for your project
-`mkdir my-project`
-`cd my-project` 
+## To get started with 11ty, create a folder for your project 
+`mkdir my-project` 
+`cd my-project`  
 
-## Initialize node in your project directory
-`npm init -y`
+## Initialize node in your project directory 
+`npm init -y` 
 
 ## Install the version of Eleventy that you want.
 https://www.npmjs.com/package/@11ty/eleventy?activeTab=versions
 
 For example, the internationalization is currently only included in eleventy 2.0.  If you want that, you can install:
 
-`npm i @11ty/eleventy@2.0.0-canary.18`
+`npm i @11ty/eleventy@2.0.0-canary.18`  
 
 or if you just want whatever the current version is: 
 
-`npm install @11ty/eleventy`
+`npm install @11ty/eleventy` 
 
 You will now see a package-lock.json file in your project directory.  This file lists all the packages needed for your project and their versions.
 
-### How to run 11ty
+### How to run 11ty 
 
-`npx eleventy` -- build the site
-`npx eleventy --serve` --run local dev in browser
+`npx eleventy` -- build the site  
+`npx eleventy --serve` --run local dev in browser  
 
