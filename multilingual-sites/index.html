@@ -32,7 +32,25 @@
 </nav>
     <div class="container">
       <div class="card">
-       <p>adding leaflet page with data</p>
+       <p>Very often, you'll want your site to support more than one language.  The simplest way to do this is to create a root folder for each langague.  For example:</p>
+<pre><code>my-project
+  - en
+    en.json
+    index.md
+  - es
+    es.json
+    index.md
+</code></pre>
+<p>The en.json and es.json files only need to contain the two-letter iso langauge code
+<code>{&quot;lang&quot;: &quot;en&quot;}</code> or <code>{&quot;lang&quot;: &quot;es&quot;}</code></p>
+<p>You will also need to set a default language in your <code>.eleventy.js</code> file.  For example, this file sets the <code>en</code> folder as default to load when no language is given.:</p>
+<pre><code class="language-js">eleventyConfig.addPlugin(EleventyI18nPlugin, {
+      // any valid BCP 47-compatible language tag is supported
+      defaultLanguage: &quot;en&quot;, // Required, this site uses &quot;en&quot;
+      errorMode: &quot;never&quot;
+    });
+</code></pre>
+<p>There's much more on internationalization in the 11ty docs.  It's important to note that the I18N plugin is only available in 11ty version 2.0+, which requires Node 14+.</p>
 
       </div>
     </div>
