@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Ubuntu:ital@1&display=swap');
 body {
-    background: #e8e7ff;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); 
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
 }
