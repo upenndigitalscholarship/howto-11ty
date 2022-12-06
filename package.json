@@ -19,6 +19,7 @@
   "homepage": "https://github.com/upenndigitalscholarship/howto-11ty#readme",
   "dependencies": {
     "@11ty/eleventy": "^2.0.0-canary.18",
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "pagefind": "^0.10.3"
   }
 }

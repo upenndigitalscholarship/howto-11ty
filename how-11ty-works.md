@@ -111,7 +111,7 @@ Note that the frontmatter field `title` can be access using `recipe.data.title`.
 Here's a link to the attributes of a collection item: https://www.11ty.dev/docs/collections/#collection-item-data-structure
 
 > If you don't have clear types of pages, you can skip the tagging step and use `collections.all`, which returns an iterable of all the pages in your site.
-
+> Also note that 11ty's default is to sort by creation date rather than alphabetical
 
 ## Pages 
 https://www.11ty.dev/docs/data-eleventy-supplied/#page-variable
