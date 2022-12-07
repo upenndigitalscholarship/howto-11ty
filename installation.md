@@ -17,7 +17,7 @@ Your browser contains an environment that can execute JavaScript. To do the same
     - `sudo apt install nodejs`
     - https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 
-### A quick tour around your new Node neighborhood
+### A quick tour of Node
 
 With Node installed, you'll get several new commands in your terminal.  
 
@@ -34,14 +34,15 @@ npm (Node Package Manager) is the default package manager for Node.js. Packages 
 npx (Node Package Execute) is included with npm. The `npx` command lets you run code in your project's environment with all the packages installed. For example: `npx eleventy`.
 
 
-## To get started with 11ty, create a folder for your project 
+### To get started with 11ty, create a folder for your project 
 `mkdir my-project` 
+
 `cd my-project`  
 
-## Initialize node in your project directory 
+### Initialize node in your project directory 
 `npm init -y` 
 
-## Install the version of Eleventy that you want.
+### Install the version of Eleventy that you want.
 https://www.npmjs.com/package/@11ty/eleventy?activeTab=versions
 
 For example, the internationalization is currently only included in eleventy 2.0.  If you want that, you can install:
